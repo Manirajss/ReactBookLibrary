@@ -9,7 +9,7 @@ const Search = Input.Search;
 const Option = Select.Option;
 const BooksSearchBarComponent = props => {  
     return (        
-      <div >        
+      <div >                
         <Row>
             <Col span={2}>
             <Select defaultValue="Book Name" 

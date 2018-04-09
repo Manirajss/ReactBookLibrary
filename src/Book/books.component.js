@@ -17,6 +17,7 @@ const BookComponent = props => {
     selectedRowKeys,
     onChange: props.onSelectChange,
   };
+ 
     return (
       <div >        
         <Col offset={2}>
