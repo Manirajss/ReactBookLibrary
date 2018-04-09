@@ -145,11 +145,9 @@ class BookContainer extends Component {
     });
   }
   handleOk = (e) => {
-    console.log(e);
     this.setState({
       visible: false,
     });
-    debugger;
     var updatedMyBooksDataSource = this.state.myBooksDataSource;
     var updatedBooksDataSource = [];
     var selectedKey = this.state.selectedRowKeys[0];
@@ -180,25 +178,19 @@ class BookContainer extends Component {
   }
   }
   handleCancel = (e) => {
-    console.log(e);
     this.setState({
       visible: false,
     });
   }
-  tabCallback(key) {
-    console.log(key);
-  }
-  onSelectChange = (selectedRowKeys) => {
-    debugger;
-    console.log('selectedRowKeys changed: ', selectedRowKeys);
+ 
+  onSelectChange = (selectedRowKeys) => {    
     this.setState({ selectedRowKeys : selectedRowKeys});
   }
   requestConfirm(){
-    debugger;
     if(this.state.selectedRowKeys.length > 0){
-    this.setState({
-      visible: true
-    }); 
+      this.setState({
+        visible: true
+      }); 
   }      
     else
       alert("Please select an item!");
@@ -231,7 +223,6 @@ class BookContainer extends Component {
   }
 
      filterDataSource(value,tabName){
-       debugger;
        var valueLowerCase = value.trim().toLowerCase();
        var filteredDataSource = [];
        var selectedSearchType = this.state.selectedSearchType;
@@ -280,7 +271,6 @@ class BookContainer extends Component {
                 resetSearch={this.resetSearch.bind(this)}
                 handleSearchTypeChange={this.handleSearchTypeChange.bind(this)}
                 filterDataSource={this.filterDataSource.bind(this)}
-                tabCallback={this.tabCallback.bind(this)}
                 onSelectChange={this.onSelectChange.bind(this)}
             />           
         );

@@ -20,7 +20,7 @@ const BookComponent = props => {
     return (
       <div >        
         <Col offset={2}>
-        <Tabs defaultActiveKey="1" onChange={props.tabCallback.bind(this)}>
+        <Tabs defaultActiveKey="1" >
               <TabPane tab="Request Books" key="1">
               <BooksSearchBarComponent 
                 handleSearchTypeChange={props.handleSearchTypeChange.bind(this)}
