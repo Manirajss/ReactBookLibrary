@@ -35,7 +35,7 @@ const BookComponent = props => {
                 resetSearch={props.resetSearch.bind(this)}
                 tabName={"returnbooks"}
               />  
-              <Table rowSelection={rowSelection} dataSource={props.book.myBooksDataSource} columns={props.book.returnColumns} />      
+              <Table rowSelection={rowSelection} dataSource={props.book.myBooksDataSource} columns={props.book.returnColumns} locale={{ emptyText: 'Please request new books or adjust your search criteria' }}/>      
               </TabPane>
               
               {/* <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane> */}
