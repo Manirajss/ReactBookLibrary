@@ -25,7 +25,7 @@ const BookComponent = props => {
               <BooksSearchBarComponent 
                 handleSearchTypeChange={props.handleSearchTypeChange.bind(this)}
                 filterDataSource={props.filterDataSource.bind(this)}
-                resetSearch={props.resetSearch.bind(this)}
+                resetSearch={props.resetSearch.bind(this,'requestbooks')}
                 tabName={"requestbooks"}
               />
         <Table rowSelection={rowSelection} dataSource={props.book.dataSource} columns={props.book.columns} /></TabPane>

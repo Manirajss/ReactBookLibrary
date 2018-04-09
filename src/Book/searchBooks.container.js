@@ -25,7 +25,7 @@ const BooksSearchBarComponent = props => {
               onSearch={value => props.filterDataSource(value,props.tabName)}
               enterButton
             /></Col>
-            <Col span={6}><Button 
+            <Col offset={1} span={6}><Button 
               type="primary"
               onClick={props.resetSearch.bind(this)}>Reset search</Button></Col>
         </Row>       
