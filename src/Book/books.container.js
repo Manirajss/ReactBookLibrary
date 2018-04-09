@@ -204,7 +204,30 @@ class BookContainer extends Component {
       alert("Please select an item!");
   }
   returnConfirm(){
-
+      
+      //start
+      if(this.state.selectedRowKeys.length > 0){
+      var updatedMyBooksDataSource = this.state.myBooksDataSource;
+      var updatedBooksDataSource = [];
+      var selectedKey = this.state.selectedRowKeys[0];
+     // var allowUpdate = true;
+      this.state.updatedDataSource.forEach(function(dataSource) {  
+            
+          if(dataSource.key.toLowerCase() === selectedKey){
+            dataSource.availableItems =  dataSource.availableItems + 1 ;
+            updatedMyBooksDataSource.pop(dataSource);
+          }
+          updatedBooksDataSource.push(dataSource);
+      });
+        this.setState({updatedDataSource:updatedBooksDataSource,myBooksDataSource:updatedMyBooksDataSource,selectedRowKeys:[],updatedMyBooksDataSource:updatedMyBooksDataSource});
+        notification["success"]({
+          message: 'Success',
+          description: 'Book returned successfully.',
+          duration:3
+        });
+      }  else
+        alert("Please select an item!");
+      //end
   }
 
      filterDataSource(value,tabName){
@@ -253,6 +276,7 @@ class BookContainer extends Component {
                 }}
                 onOk={this.handleOk.bind(this)}
                 onCancel={this.handleCancel.bind(this)}
+                returnConfirm={this.returnConfirm.bind(this)}
                 resetSearch={this.resetSearch.bind(this)}
                 handleSearchTypeChange={this.handleSearchTypeChange.bind(this)}
                 filterDataSource={this.filterDataSource.bind(this)}
